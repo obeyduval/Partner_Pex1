@@ -12,7 +12,8 @@
 
 #define MAX 50
 
-//A node of ternary search tree
+//A single node of ternary search tree
+
 struct Node
 {
     char data;
@@ -28,6 +29,7 @@ void insert(struct Node** root, char *word);
 void traverseTSTUtil(struct Node* root, char* buffer, int depth);
 int searchTST(struct Node *root, char *word);
 void traverseTST(struct Node* root);
+void freeMem(struct Node* temp);
 
 
 #endif //MYEXE_TERNARYTREE_H

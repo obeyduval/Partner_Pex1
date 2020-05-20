@@ -16,7 +16,7 @@ set(CMAKE_C_FLAGS "-Wall")
 
 # List all files that are required to compile your project
 set(SOURCE_FILES
-        ${SDIR} ternarytree.c ternarytree.h SpellChecker.c SpellChecker.h)
+        ${SDIR} ternarytree.c ternarytree.h SpellChecker.c SpellChecker.h readFile.c readFile.h)
 
 # Tell cmake the name of your executable and what source files to
 # build from

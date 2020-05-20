@@ -4,6 +4,7 @@
 
 #include "SpellChecker.h"
 #include "ternarytree.h"
+#include "readFile.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,20 +12,25 @@ int main(void){
 
     struct Node *root = NULL;
 
-    insert(&root, "dog");
+    char filename[50] = "../cmake-build-debug/CMakeFiles/test1.txt";
+
+    readFIle(filename, &root);
+//
+//    insert(&root, "dog");
     insert(&root, "dogs");
-    insert(&root, "danger");
-    insert(&root, "angle");
+//    insert(&root, "danger");
+//    insert(&root, "angle");
 
     printf("Traversal of ternary search tree\n");
 
     traverseTST(root);
 
-    printf("\nSearch results for dogs, and, and angel\n");
+    printf("\nSearch results for dogs, PUNDITRIES, and FANYON\n");
 
     searchTST(root, "dogs")? printf("Found\n"): printf("Not Found\n");
-    searchTST(root, "and")?   printf("Found\n"): printf("Not Found\n");
-    searchTST(root, "angel")?  printf("Found\n"): printf("Not Found\n");
+    searchTST(root, "PUNDITRIES")?   printf("Found\n"): printf("Not Found\n");
+    searchTST(root, "FANYON")?  printf("Found\n"): printf("Not Found\n");
+
 
     return 0;
 }
