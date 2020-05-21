@@ -6,19 +6,30 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-//Function to create a new ternary search tree node
+/**
+ * Node
+ *Function to create a new ternary search tree node
+ * @param data
+ * @return temp structure
+ */
 struct Node* newNode(char data)
 {
     struct Node* temp = (struct Node*) malloc(sizeof( struct Node ));
     temp->data = data;
-    temp->isEndOfString = 0;
+    temp->isEndOfString = 1;
     temp->left = NULL;
     temp->eq = NULL;
     temp->right = NULL;
     return temp;
 }
 
-// Function to insert a new word in a Ternary Search Tree
+
+/**
+ * insert
+ * // Function to insert a new word in a Ternary Search Tree
+ * @param root
+ * @param word
+ */
 void insert(struct Node** root, char *word)
 {
     // Base Case= Tree empty
@@ -51,8 +62,14 @@ void insert(struct Node** root, char *word)
     }
 }
 
-// Recursive function to traverse TST
 
+/**
+ * traverseTSTUtil
+ * Recursive function to traverse TST
+ * @param root
+ * @param buffer
+ * @param depth
+ */
 void traverseTSTUtil(struct Node* root, char* buffer, int depth)
 {
     if (root)
@@ -66,7 +83,7 @@ void traverseTSTUtil(struct Node* root, char* buffer, int depth)
         if (root->isEndOfString)
         {
             buffer[depth+1] = '\0';
-            printf( "%s\n", buffer);
+            //printf( "%s\n", buffer);
         }
 
         // Traverse the subtree using eq pointer (middle subtree)
@@ -85,7 +102,14 @@ void traverseTST(struct Node* root)
     traverseTSTUtil(root, buffer, 0);
 }
 
-// Function to search for word in TST
+//
+/**
+ * searchTST
+ *  Function to search for word in TST
+ * @param root
+ * @param word
+ * @return truth value if word is found
+ */
 int searchTST(struct Node *root, char *word)
 {
     if (!root)

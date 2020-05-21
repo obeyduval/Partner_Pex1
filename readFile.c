@@ -6,6 +6,12 @@
 #include "SpellChecker.h"
 #include "ternarytree.h"
 
+/**
+ * readFile
+ * reads the file and inserts the words from the file into the tree
+ * @param filename
+ * @param root
+ */
 void readFIle(char filename[], struct Node **root){
 
     FILE *fptr;
